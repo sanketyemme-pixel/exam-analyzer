@@ -4,7 +4,10 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-DATA_FILE = "exam_data.json"
+# DATA_FILE = "exam_data.json"
+import tempfile
+import os
+DATA_FILE = os.path.join(tempfile.gettempdir(), "exam_data.json")
 
 def load_data():
     if os.path.exists(DATA_FILE):
